@@ -12,6 +12,9 @@
               <a href="/cats/{{ cat.id }}" class="btn btn-primary">View {{ cat.name }}</a>
             </div>
             <div class="card-footer text-muted">
+              <p>Adopted by: 
+                <a href="/user/{{ cat.user.username }}">{{ cat.user.username }}</a>
+              </p>
               Age: {{ cat.age }}
             </div>
         </div>

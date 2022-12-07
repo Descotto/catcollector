@@ -15,4 +15,7 @@
               Age: {{ cat.age }}
             </div>
         </div>
+<!-- add links for update and delete -->
+<a href="{% url 'cats_update' cat.id %}" class="btn btn-warning">Update Details</a>
+<a href="{% url 'cats_delete' cat.id %}" class="btn btn-danger">Delete Cat</a>
 {% endblock %}
