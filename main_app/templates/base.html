@@ -10,8 +10,15 @@
     <title>Cat Collector</title>
 </head>
 <body>
+    
     <h1>Cat Collector</h1>
-   
+    {% if user.is_authenticated %}
+    <li class="breadcrumb-item active" aria-current="page"><a href="/user/{{user}}">{{user}}'s Profile</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'logout' %}">Logout</a></li>
+{% else %}
+    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'login' %}">Login</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'signup' %}">Signup</a></li>
+{% endif %}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/">Home</a></li>
